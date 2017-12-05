@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>欢迎来到任明状的网易云工作室</title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+			}
+			.center {
+				margin: 0px auto;
+			}
+			.snvtitle {}
+			
+			.snvtitle li {
+				width: 90px;
+				height: 70px;
+				float: left;
+				line-height: 70px;
+				text-align: center;
+				color: #CCCCCC;
+				font-size: 14px;
+			}
+			
+			.snvtitle li:hover {
+				color: white;
+				background-color: #000000;
+			}
+			
+			input {
+				outline: none;
+				font-size: 10px;
+				color: #515151;
+			}
+			
+			.dispic {
+				width: 95px;
+				height: 35px;
+				float: left;
+				margin-top: 20px;
+				background: url(img/topbar.png) no-repeat 0px -140px;
+				text-indent: 32px;
+				font-size: 10px;
+				line-height: 32px;
+				color: white;
+				margin-left: 10px;
+			}
+			
+			.dispic:hover {
+				background: url(img/topbar.png) no-repeat -100px -140px;
+			}
+			
+			.nav_play li {
+				float: left;
+				width: 30px;
+				height: 30px;
+				margin-top: 8px;
+			}
+			
+			.nav_play .prev {
+				background: url(img/playbar.png) no-repeat 0px -130px;
+				margin-right: 10px;
+				margin-top: 12px;
+				margin-left: 8px;
+			}
+			
+			.prev:hover {
+				background: url(img/playbar.png) no-repeat -30px -130px;
+			}
+			
+			.play {
+				background: url(img/playbar.png) no-repeat -1px -205px;
+				margin-right: 10px;
+			}
+			.stop{
+				background: url(img/playbar.png) no-repeat -1px -166px;
+				margin-right: 10px;
+			}
+			
+			.nav_play .nex {
+				background: url(img/playbar.png) no-repeat -80px -130px;
+				margin-top: 12px;
+			}
+			
+			.nex:hover {
+				background: url(img/playbar.png) no-repeat -110px -130px;
+			}
+			
+			.mictimes span {
+				font-size: 12px;
+				color: white;
+			}
+			
+			.picadd {
+				height: 25px;
+				width: 25px;
+				float: left;
+				background: url(img/playbar.png) no-repeat -90px -162px;
+			}
+			
+			.picadd:hover {
+				background: url(img/playbar.png) no-repeat -90px -188px;
+			}
+			
+			.picfasong {
+				height: 25px;
+				width: 25px;
+				float: left;
+				background: url(img/playbar.png) no-repeat -115px -162px;
+			}
+			
+			.picfasong:hover {
+				background: url(img/playbar.png) no-repeat -115px -188px;
+			}
+			
+			.picsonder {
+				height: 25px;
+				width: 25px;
+				float: left;
+				background: url(img/playbar.png) no-repeat -105px -68px;
+			}
+			
+			.picsonder:hover {
+				background: url(img/playbar.png) no-repeat -127px -68px;
+			}
+			
+			.picqiehua {
+				height: 25px;
+				width: 25px;
+				float: left;
+				background: url(img/playbar.png) no-repeat -4px -342px;
+			}
+			
+			.picqiehua:hover {
+				background: url(img/playbar.png) no-repeat -34px -342px;
+			}
+			
+			.picmenu {
+				height: 25px;
+				width: 60px;
+				float: left;
+				background: url(img/playbar.png) no-repeat -45px -68px;
+			}
+			
+			.picmenu:hover {
+				background: url(img/playbar.png) no-repeat -45px -98px;
+			}
+			
+			.mytitle li {
+				float: left;
+			}
+			
+			.dipplaymic {
+				width: 1050px;
+				height: 4px;
+				background-color: #323232;
+				overflow: hidden;
+				height: 50px;
+				margin: 0px auto;
+			}
+			
+			.player {
+				position: fixed;
+				bottom: 0px;
+				width: 100%;
+				background-color: #323232;
+				height: 50px;
+			}
+			
+			.player:hover {
+				height: 50px;
+			}
+			
+			.selectplay {
+				float: left;
+				width: 80px;
+				height: 100%;
+				border: 1px solid #D5D5D5;
+				border-right: none;
+				border-top: none;
+				line-height: 25px;
+				text-indent: 10px;
+				font-size: 10px;
+				color: grey;
+				position:  relative;
+			}
+			
+			.songtitle {
+				float: left;
+				width: 280px;
+				height: 100%;
+				border: 1px solid #D5D5D5;
+				border-right: none;
+				border-left: none;
+				border-top: none;
+				line-height: 25px;
+				font-size: 11px;
+				color: grey;
+				text-indent: 10px;
+			}
+			
+			.songtimes {
+				float: left;
+				width: 140px;
+				height: 100%;
+				border: 1px solid #D5D5D5;
+				border-right: none;
+				border-left: none;
+				border-top: none;
+				line-height: 25px;
+				font-size: 11px;
+				color: grey;
+				text-indent: 10px;
+			}
+			
+			.singers {
+				float: left;
+				width: 110px;
+				height: 100%;
+				border: 1px solid #D5D5D5;
+				border-right: none;
+				border-left: none;
+				border-top: none;
+				line-height: 25px;
+				font-size: 11px;
+				color: grey;
+				text-indent: 10px;
+			}
+			
+			.zhuanTi {
+				float: left;
+				width: 148px;
+				height: 100%;
+				border: 1px solid #D5D5D5;
+				line-height: 25px;
+				border-left: none;
+				border-top: none;
+				font-size: 11px;
+				color: grey;
+				text-indent: 10px;
+			}
+			.playState{
+				height:11px;
+				width: 500px;
+				float: left;
+				background:url(img/statbar.png) no-repeat 0px 2px;
+				position: relative;
+				margin-top: 3px;
+				cursor: pointer;
+			}
+			.jindutiao{
+				float:left;
+				height: 11px;
+				background: url(img/statbar.png) no-repeat 1px -64px;
+				
+			}
+			.controlzore{
+				background:url(img/iconall.png) no-repeat -2px -253px;
+				width:18px;
+				height: 18px;
+				float:left;
+				position: absolute;
+				top: -2px;
+				left: 0px;
+			}
+		</style>
+
+		<body>
+			<div style="width: 100%;height:70px;background-color: #212421;border-bottom:5px solid #C20C0C;">
+				<div class="center" style="width: 1050px;height:70px;background-color: #212421;">
+					<div style="float: left;width: 170px;height: 60px;background: url(img/topbar.png) no-repeat 0px -8px;margin-top: 10px;"></div>
+					<ul class="snvtitle" style="width:530px;height:70px;float: left;position: relative;">
+						<li>发现音乐</li>
+						<li style="position: relative;background-color:#000000;">我的音乐
+							<div style="width:25px;height: 13px;position: absolute;top:57px;right: 30px;background: url(img/topbar.png) no-repeat -210px -133px;"></div>
+						</li>
+						<li style="width: 70px;">朋友</li>
+						<li style="width: 70px;">商城</li>
+						<li style="width: 80px;">音乐人</li>
+						<li style="width: 110px;">下载客户端
+							<div style="width:30px;height: 16px;position: absolute;top:20px;right: 0px;background: url(img/topbar.png) no-repeat -190px 0px;"></div>
+						</li>
+					</ul>
+
+					<div style="width: 160px;height: 30px;float: left;background-color: white;margin-top: 20px;border-radius: 20px;overflow: hidden;margin-left: 20px;">
+						<div style="float: left;width:30px;height: 28px;top:20px;right: 0px;background: url(img/topbar.png) no-repeat -3px -100px;"></div>
+						<input style="float: left;width:120px;height:30px; display: block;border: none;" placeholder="音乐/电台/用户" />
+					</div>
+					<div class="dispic">
+						视屏投稿
+					</div>
+					<div style="float: right;width: 63px;height: 30px;margin-top:20px ;overflow: hidden;">
+						<div style="width: 30px;height: 30px;float: left;font-size: 12px;color:#787878;line-height: 30px;">登陆</div>
+						<div style="margin-top:12px;float:left;width:26px;height: 10px;top:20px;right: 0px;background: url(img/topbar.png) no-repeat -220px -60px;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="center" style="border:1px solid grey;width: 1050px;height:650px;position: relative;">
+				<div class="micpeople" style="width:240px;height:650px;float:left;overflow-y:scroll;">
+					<div style="width: 216px;height: 30px;margin-top:30px;">
+						<div style="float: left;width: 20px;line-height: 35px;text-align: center;margin-left: 10px;">
+							<i class="fa fa-caret-down" aria-hidden="true" style="font-size: 22px;color: grey;"></i>
+						</div>
+						<div style="float: left;width:100px;line-height: 30px;text-align: center;font-size: 14px;">
+							<strong>创建的歌单(2)</strong>
+						</div>
+
+						<div style="margin-top: 5px;background-color: #F8F8F8;float:right;border-radius:4px;border: 1px solid grey;width:48px;height: 20px;line-height:20px;text-align: center;font-size: 12px;color:#515151;">
+							<i class="fa fa-plus" aria-hidden="true" s style="color:red;font-size:14px;"></i>&nbsp;新建
+						</div>
+					</div>
+					<div style="width: 200px;height: 45px;margin-top: 5px;">
+						<div style="width: 42px;height: 42px;float: left;background: url(img/3397490930543093.jpg) no-repeat;margin-left: 10px;"></div>
+						<div style="width:120px;height: 42px;float: left;">
+							<div style="font-style: 12px;color:black;margin-left:10px">我喜欢的音乐</div>
+							<div style="color: grey;font-size: 11px;margin-left:10px">10首</div>
+						</div>
+					</div>
+
+					<div style="width: 200px;height: 45px;margin-top: 5px;">
+						<div style="width: 42px;height: 42px;float: left;background: url(img/3397490930543093.jpg) no-repeat;margin-left: 10px;"></div>
+						<div style="width:120px;height: 42px;float: left;">
+							<div style="font-style: 12px;color:black;margin-left:10px">我喜欢的音乐</div>
+							<div style="color: grey;font-size: 11px;margin-left:10px">10首</div>
+						</div>
+					</div>
+				</div>
+				<div class="micmenuright" style="float: right;width: 800px;height: 650px;">
+					<div style="width: 790px;height: 230px;">
+						<div style="width:200px;height: 200px;float: left;margin-left:20px;margin-top: 20px;">
+							<img src="img/18923694625837041 (1).jpg" />
+						</div>
+						<div style="width:350px;height: 200px;float: left;margin-top: 20px;">
+							<div style="font-size: 20px;color: #333333;width:250px;height: 30px;line-height:30px;margin-left: 20px;">【李志，美得不像实力派】</div>
+							<div style="width:250px;height: 40px;margin-left: 30px;margin-top: 10px;">
+								<div style="width:40px;height: 40px;float: left;background: url(img/18923694625837041.jpg) no-repeat;"></div>
+								<div style="margin-top: 10px;width:100px;font-size: 12px;color:#0C73C2;float: left;margin-left: 8px;">从再生走向无赖</div>
+								<div style="margin-top: 10px;float: left;width:100px;font-size: 12px;color: #999999;">2015-07-04&nbsp;创建</div>
+							</div>
+							<ul class="mytitle" style="width:300px;height: 40px;margin-left: 30px;margin-top: 15px;">
+								<li style="width:100px;height: 30px;">
+									<div style="width:70px;height: 30px;float: left;background: url(img/button2.png) no-repeat 0px -633px;color: white;font-size: 12px;line-height: 30px;text-indent:32px;">播放</div>
+									<div style="width:25px;height: 30px;float: left;background: url(img/button2.png) no-repeat -5px -1588px;border-radius: 0px 4px 4px 0px;"></div>
+								</li>
+								<li style="width:85px;height: 30px;">
+									<div style="width:70px;height: 30px;float: left;background: url(img/button2.png) no-repeat 0px -977px;color:grey;font-size: 10px;line-height: 30px;text-indent:32px;">(71462)</div>
+									<div style="width:8px;height: 30px;float: left;background: url(img/button2.png) no-repeat -244px -934px;border-radius: 0px 4px 4px 0px;"></div>
+								</li>
+								<li style="width:85px;height: 30px;">
+									<div style="width:70px;height: 30px;float: left;background: url(img/button2.png) no-repeat 0px -1225px;color:grey;font-size: 10px;line-height: 30px;text-indent:32px;">(71462)</div>
+									<div style="width:8px;height: 30px;float: left;background: url(img/button2.png) no-repeat -244px -934px;border-radius: 0px 4px 4px 0px;"></div>
+								</li>
+							</ul>
+							<div style="width:250px;height: 40px;margin-left: 30px;">
+								<div style="width:45px;height: 40px;float: left;font-size: 14px;color: grey;line-height: 40px;">标签：</div>
+								<div style="border: 1px solid #D3D3D3;width: 60px;height: 25px;float: left;border-radius: 15px;margin-top: 8px;margin-left: 5px;text-align: center;line-height:25px;color: grey;font-size: 12px;">华语</div>
+								<div style="border: 1px solid #D3D3D3;width: 60px;height: 25px;float: left;border-radius: 15px;margin-top: 8px;margin-left: 5px;text-align: center;line-height:25px;color: grey;font-size: 12px;">摇滚</div>
+								<div style="border: 1px solid #D3D3D3;width: 60px;height: 25px;float: left;border-radius: 15px;margin-top: 8px;margin-left: 5px;text-align: center;line-height:25px;color: grey;font-size: 12px;">民谣</div>
+							</div>
+						</div>
+					</div>
+
+					<div style="width: 790px;height: 410px;">
+						<div style="width: 790px;height: 30px;">
+							<div style="margin-left: 20px;height: 30px;width:80px;float: left;font-size: 16px;line-height: 30px;">播放列表</div>
+							<div style="line-height: 34px;text-align: center;float:left;width: 40px;height:30px;font-size: 10px;color: grey;">180首歌</div>
+							<div style="line-height: 30px;font-size: 12px;color: grey;float:right;width:100px;height: 30px;margin-right: 6px;">
+								播放:&nbsp;
+								<a style="font-size: 10px;color:red;"><strong>3445828</strong></a>&nbsp;次
+							</div>
+						</div>
+						<div style="width: 780px;height:360px;margin-left: 18px;">
+
+							<div class="phInner" style="width:760px;height: 30px;background-color: #F4F4F4;">
+								<div class="col" style="float:left;width: 80px;height: 100%;border: 1px solid #D5D5D5;border-right: none;"></div>
+								<div class="col" style="float:left;width: 280px;height: 100%;border: 1px solid #D5D5D5;border-right: none;line-height: 28px;font-size: 13px;color: grey;text-indent: 10px;">歌曲标题</div>
+								<div class="col" style="float:left;width: 140px;height: 100%;border: 1px solid #D5D5D5;border-right: none;line-height: 28px;font-size: 13px;color: grey;text-indent: 10px;">时长</div>
+								<div class="col" style="float:left;width: 110px;height: 100%;border: 1px solid #D5D5D5;border-right: none;line-height: 28px;font-size: 13px;color: grey;text-indent: 10px;">歌手</div>
+								<div class="col" style="float:left;width: 144px;height: 100%;border: 1px solid #D5D5D5;line-height: 28px;font-size: 13px;color: grey;text-indent: 10px;">专辑</div>
+							</div>
+
+							<div style="width:770px;height:25px;">
+								<div class="selectplay">1
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">七月上</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">Jam</div>
+								<div class="zhuanTi">ATM Jam</div>
+							</div>
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">2
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">Dancing King</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">EXO</div>
+								<div class="zhuanTi">dancingking</div>
+							</div>
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">3
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">林中鸟</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">葛林</div>
+								<div class="zhuanTi">音乐热搜</div>
+							</div>
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">4
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">日</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">李志</div>
+								<div class="zhuanTi">你好，郑州</div>
+							</div>
+							
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">5
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">斑马</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">宋冬野</div>
+								<div class="zhuanTi">Andrew Boortl</div>
+							</div>
+							
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">6
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">SOBER-KR</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">BIGBANG</div>
+								<div class="zhuanTi">tone min</div>
+							</div>
+							
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">7
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">Shape Of You</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">Ed Sheeran</div>
+								<div class="zhuanTi">Notd:Kidink</div>
+							</div>
+							
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">8
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">一直在等你</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">本兮</div>
+								<div class="zhuanTi">完美世界</div>
+							</div>
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">9
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">远走高飞</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">金志文</div>
+								<div class="zhuanTi">回音哥</div>
+							</div>
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">10
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">眉间雪</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">暗-眉间学</div>
+								<div class="zhuanTi">一个人</div>
+							</div>
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">11
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">暧昧</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">李志</div>
+								<div class="zhuanTi">晓月老板</div>
+							</div>
+							
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">12
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">你的配角</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">陆思涵</div>
+								<div class="zhuanTi">回音哥-都给你</div>
+							</div>
+							<div style="width:770px;height: 25px;">
+								<div class="selectplay">13
+								<div style="width: 17px;height: 17px;position: absolute;top: 3px;left: 40px;background: url(img/iconall.png) no-repeat;"></div>
+								</div>
+								<div class="songtitle">逆流成河</div>
+								<div class="songtimes">02:42</div>
+								<div class="singers">白健平</div>
+								<div class="zhuanTi">斑驳的夜</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+
+			<footer class="player" id="footer">
+				<div class="dipplaymic">
+					<ul class="nav_play" style="float: left;width: 140px;height:100%;">
+						<li id="prev" class="prev"></li>
+						<li id="play" class="play" style="width:35px;height: 35px;"></li>
+						<li id="next" class="nex"></li>
+					</ul>
+					<div style="float: left;width:640px;height: 50px;">
+						<div style="margin-top: 8px;width: 35px;height: 35px;float: left;background: url(img/default_album.jpg)  no-repeat;background-size: 35px;"></div>
+						<div style="width: 500px;height: 50px;float: left;margin-left: 10px;">
+							<div style="overflow: hidden;margin-top: 2px;">
+								<div id="songname" style="font-size: 12px;line-height: 22px;height: 20px;float: left;color: #E8E8E8;">无歌曲</div>
+								<div style="margin-left: 6px;margin-top: 3px;width: 15px;height: 15px;float: left;background: url(img/playbar.png) no-repeat -110px -101px;"></div>
+							</div>
+
+							<div id="playState" class="playState">
+								
+									<div id="jindutiao" class="jindutiao"></div>
+									<div id="controlzore" class="controlzore"></div>
+								
+							</div>
+						</div>
+
+						<div class="mictimes" style="width: 82px;height: 20px;float: left;margin-top:18px;margin-left: 5px;color: #5E5E5E;">
+							<span id="crtime">00:00</span> /<span id="totaltime">00:00</span>
+						</div>
+					</div>
+					<div style="float:right;width:200px;height: 30px;margin-top:10px;">
+						<div class="picadd"></div>
+						<div class="picfasong"></div>
+						<div class="picsonder"></div>
+						<div class="picqiehua"></div>
+						<div class="picmenu"></div>
+					</div>
+				</div>
+			</footer>
+			
+			<audio id="player">
+
+			</audio>
+			<script>
+				var arr = [];
+				arr.push("一直在等-本兮.mp3");
+				arr.push("远走高飞 (独唱版)-金志文.mp3.mp3");
+				arr.push("在人间-王建房.mp3");
+				let index = 0;
+				//获取id属性标签
+				function get(name) {
+					return document.getElementById(name);
+				}
+				//获取音乐名称
+				function getname() {
+				if(index == -1) index = 0;
+				document.getElementById("songname").innerText = arr[index].replace(".mp3", "");
+				}
+				
+				//上一首歌的点击事件；
+				get("prev").onclick = function() {
+					if(--index < 0) index = 2;
+					get("play").className = "stop";
+					isInit = true; 
+					setSongPlay();
+				}
+				//播放下一首音乐
+				get("next").onclick = function() {
+					if(++index > 2) index = -1;
+					get("play").className = "stop";
+					isInit = true; 
+					setSongPlay();
+				}
+				//播放设置
+				function setSongPlay() {
+					if(index == -1) index = 0;
+					document.getElementById("songname").innerText = arr[index].replace(".mp3", "");
+					get("player").src = "mp3/" + arr[index];
+					get("player").play();
+				}
+
+				let cleartime = null;
+				let time = 0;
+				let isInit = false;
+				//播放当前音乐
+				get("play").onclick = function() {
+					if(this.className == "play") {  //如果是播放
+						this.className = "stop"; //调用播放样式
+						isInit = true; 
+						setSongPlay();
+					} else {
+						this.className = "play";
+						get("player").pause();
+						clearInterval(cleartime);
+						cleartime = null;
+						isInit = false; 
+					}
+				}
+				//自动下一首的方法：
+				function nextSong() {
+					if(++index >= arr.length) 
+						index=0;
+						isInit = true;
+						setSongPlay();
+				}
+				//播放时进度条和时间显示的方法：
+				function playing() {
+					time = get("player").currentTime; //获取当前时间
+					get('crtime').innerText = getTime(time); //在给当前时间赋值
+					get("totaltime").innerHTML = getTime(get("player").duration);//给总时间赋值
+					get('jindutiao').style.width = (time / get("player").duration * 480) + 'px'; 
+					get('controlzore').style.left =((time / get("player").duration * 480)-2) + 'px';
+					if(time == get('player').duration) {
+						nextSong();
+					}
+				}
+				//计算时间的方法
+				function getTime(t) {
+				var minut = 0;
+					var seconds = 0;
+					if(t < 60) {
+						seconds = t;
+					} else {
+						minut = parseInt(t / 60);
+						seconds = parseInt(t) - minut * 60;
+					}
+					return AddZero(minut) + ":" + AddZero(parseInt(seconds));
+				}
+				//先调用
+				get("player").oncanplay = () => {
+						cleartime = setInterval(playing, 50);
+				}
+				//补零的方法
+				function AddZero(num) {
+					if(num < 10) {
+						return "0" + num;
+					}
+					return num;
+				}
+				
+				let flag = false;
+				let mx=0;  
+				let my=0;
+				let sx=0;
+				let sy =0;
+				let px=0;
+				let py=0;
+				//鼠标点击事件
+				onmousedown =function(e) {
+				let m = e || window.event;
+				mx = e.clientX; //鼠标点击时距离浏览器左边的距离 (都是相对于浏览器而言：)
+				my = e.clientY; //鼠标点击时距离浏览器上方的距离
+				sx = get('playState').offsetLeft; //获取滚动条外边框距离父框左边的距离//offsetLeft就是相对于最外面的容器
+				sy = get('playState').offsetTop + get('footer').offsetTop;  //加起来的和就是获取距离浏览器矿顶部的值
+				clearInterval(cleartime); //清空计时器
+				console.log(sx,sy);
+				console.log(mx,my);
+				//判断条件是：(mx >= sx && mx <= sx)判断鼠标点击点击的范围是palysate的边框的宽度
+				//（my >= sy && my <= sy+8） 判断高度在滚动条值高范围内；在这个范围内才能点击
+				if(mx >= sx && mx <= sx + 500 && my >= sy && my <= sy+11) {
+					flag=true;
+					//重新加载时间:算法如下
+					time = (mx - sx) / 480 * get("player").duration;
+					//在给当前事件重新赋值：
+					get("player").currentTime = time;
+					//调用计时器：
+					cleartime = setInterval(playing, 50); 
+					if(get("player").paused) {
+						clearInterval(cleartime);
+						playing();
+						return;
+					}
+				}
+			}
+				onmouseup=function(){
+				flag = false;
+			}
+			onmousemove=function(e){
+					if(!flag){
+						return;
+					}
+					mx = e.clientX;
+					my = e.clientY;
+					sx = get('playState').offsetLeft;
+					px = get('controlzore').offsetLeft+get("player").offsetLeft;
+					px=2*px-mx;
+					console.log(mx,my,px);
+					time = (mx - sx) / 490 * get("player").duration;
+					get("player").currentTime = time;
+					cleartime = setInterval(playing, 1000);
+					if(get("player").paused) {
+						clearInterval(cleartime);
+						playing();
+						return;
+					}
+				}
+			</script>
+		</body>
+
+</html>
